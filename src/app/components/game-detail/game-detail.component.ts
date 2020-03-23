@@ -11,6 +11,7 @@ export class GameDetailComponent implements OnInit {
 
   @Input()
   gameId:number;
+ 
   game:GameItem;
 
 
