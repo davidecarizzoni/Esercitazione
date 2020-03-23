@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameItem } from 'src/app/model/game-item.interface';
+import { GameListService } from 'src/app/services/game-list.service';
 
 @Component({
   selector: 'app-game-list',
@@ -8,34 +9,14 @@ import { GameItem } from 'src/app/model/game-item.interface';
 })
 export class GameListComponent implements OnInit {
 
-  dateMinecraft: Date = new Date('2009-05-17');
-  dateFortnite: Date = new Date('2017-09-21');
+  gameList: GameItem [] = []; 
 
-  gameList: GameItem[] = [
-    {
-      id:1, 
-      nome:'Minecraft', 
-      description:'Minecraft è un videogioco di tipo sandbox originariamente creato e sviluppato dal programmatore svedese Markus Alexej Persson dal 2009 al 2011 e successivamente sviluppato e pubblicato dalla Mojang e dal capo sviluppatore Jens Bergensten dal 2011 a oggi.', 
-      genere:'Storia', 
-      rating:'AA', 
-      prezzo:50, 
-      annoUscita: this.dateMinecraft
-    },
-    {
-      id:2, 
-      nome:'Fortnite', 
-      description:'Fortnite è un videogioco del 2017 sviluppato da Epic Games e People Can Fly. Il videogioco presenta tre modalità distinte che condividono lo stesso motore grafico: Salva il mondo, Modalità Creativa e Battaglia reale.', 
-      genere:'Storia', 
-      rating:'AA', 
-      prezzo:50, 
-      annoUscita: this.dateFortnite
-    }
-
-  ]
-
-  constructor() { }
+  constructor(private gameListService: GameListService) {
+    this.gameList = this.gameListService.getGameList();
+  }
 
   ngOnInit(): void {
+  
   }
 
 }
