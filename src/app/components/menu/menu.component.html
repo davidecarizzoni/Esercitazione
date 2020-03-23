@@ -1,1 +1,9 @@
-<p>menu works!</p>
+<div id="nav">
+    <ul>
+        <li *ngFor="let menuItem of menuList" [class.active]="menuItem.selected">
+            <button (click)="selectedComponent(menuItem.id)">
+                <a>{{menuItem.description}}</a>
+            </button>
+        </li>
+    </ul>
+</div>

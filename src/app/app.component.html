@@ -1,5 +1,5 @@
 <!-- QUI METTO I RIFERIMENTI AI SELETTORI DEGLI ALTRI COMPONENTI, che sono nel ts -->
-<app-menu> </app-menu>
+<app-menu (selectMenuItem)="componentToShow = $event"> </app-menu>
 
 <div [ngSwitch]="componentToShow"> <!-- Faccio lo switch con la variabile nel tipes-->
   <app-home *ngSwitchCase="1"></app-home>
