@@ -1,1 +1,8 @@
-<p>game-list works!</p>
+<div>
+    <ul>
+        <li *ngFor="let gameItem of gameList">
+            {{gameItem.id}}
+            {{gameItem.nome}}
+        </li>
+    </ul>
+</div>
