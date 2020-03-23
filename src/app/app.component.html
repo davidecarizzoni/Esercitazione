@@ -1,9 +1,9 @@
 <!-- QUI METTO I RIFERIMENTI AI SELETTORI DEGLI ALTRI COMPONENTI, che sono nel ts -->
-<app-menu (selectMenuItem)="componentToShow = $event"> </app-menu>
+<app-menu (selectMenuItem)="componentToShow = $event"></app-menu>
 
-<div [ngSwitch]="componentToShow"> <!-- Faccio lo switch con la variabile nel tipes-->
-  <app-home *ngSwitchCase="1"></app-home>
-  <app-game-list *ngSwitchCase="2"></app-game-list>
-  <app-edit-game *ngSwitchCase="3"></app-edit-game>
-  <app-game-detail *ngSwitchCase="4"></app-game-detail>
+<div [ngSwitch]="componentToShow">
+    <app-home *ngSwitchCase="1"></app-home>
+    <app-game-list *ngSwitchCase="2" (showDetail)="showDetailPage($event)"></app-game-list>
+    <app-edit-game *ngSwitchCase="3"></app-edit-game>
+    <app-game-detail *ngSwitchCase="4" [gameId]="gameIdForDetail"></app-game-detail>
 </div>

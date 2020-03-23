@@ -1,8 +1,9 @@
 <div class="list-type">
     <ol>
-        <li *ngFor="let gameItem of gameList">
-            {{gameItem.id}}
-            {{gameItem.nome}}
+        <li *ngFor="let item of gameList">
+            {{item.id}}
+            {{item.nome}}
+            <button (click)="showDetail(item.id)">Vai al dettaglio</button>
         </li>
     </ol>
 </div>

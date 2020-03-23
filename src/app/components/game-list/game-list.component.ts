@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GameItem } from 'src/app/model/game-item.interface';
 import { GameListService } from 'src/app/services/game-list.service';
 
@@ -9,6 +9,9 @@ import { GameListService } from 'src/app/services/game-list.service';
 })
 export class GameListComponent implements OnInit {
 
+  @Output()
+  showDetailEvent: EventEmitter<number> = new EventEmitter();
+
   gameList: GameItem [] = []; 
 
   constructor(private gameListService: GameListService) {
@@ -16,7 +19,10 @@ export class GameListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+  }
+
+  showDetail(id:number){
+    this.showDetailEvent.emit(id);
   }
 
 }
