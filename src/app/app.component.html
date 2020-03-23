@@ -1,9 +1,16 @@
 <!-- QUI METTO I RIFERIMENTI AI SELETTORI DEGLI ALTRI COMPONENTI, che sono nel ts -->
 <app-menu (selectMenuItem)="componentToShow = $event"></app-menu>
 
-<div [ngSwitch]="componentToShow">
-    <app-home *ngSwitchCase="1"></app-home>
-    <app-game-list *ngSwitchCase="2" (showDetailEvent)="showDetailPage($event)"></app-game-list>
-    <app-edit-game *ngSwitchCase="3"></app-edit-game>
-    <app-game-detail *ngSwitchCase="4" [gameId]="gameIdForDetail"></app-game-detail>
-</div>
+
+<!-- Codice senza routing commentato -->
+<!-- 
+    <div [ngSwitch]="componentToShow">
+        <app-home *ngSwitchCase="1"></app-home>
+        <app-game-list *ngSwitchCase="2" (showDetailEvent)="showDetailPage($event)"></app-game-list>
+        <app-edit-game *ngSwitchCase="3"></app-edit-game>
+        <app-game-detail *ngSwitchCase="4" [gameId]="gameIdForDetail"></app-game-detail>
+    </div>
+ -->
+
+<!-- Utilizzo della direttiva router outlet per caricare il componente in base alla visualizzazione corrente -->
+<router-outlet></router-outlet>
