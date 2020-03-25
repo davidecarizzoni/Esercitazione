@@ -12,7 +12,7 @@ export class AppComponent {
 
   showDetailPage(id:number){
     this.gameIdForDetail = id;
-    this.componentToShow = 4;
+    this.componentToShow = 4; //sappaimo che per visualizzare il dettaglio dobbiamo visualizzare il componennte 4
   }
   
 }

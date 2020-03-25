@@ -1,11 +1,19 @@
+<!-- Utilizzo della direttiva router outlet per caricare il componente in base alla visualizzazione corrente -->
 <header>
+    <!-- RouterLink: valorizzato con il path che si desidera raggiungere-->
+    <!-- RouterLinkActive: permette l'associazione di classi css -->
     <nav>
-        <ul class="nav_links"> 
-            <li *ngFor="let menuItem of menuList" [class.active]="menuItem.selected">
-                <button (click)="selectedComponent(menuItem.id)">
-                    {{menuItem.description}}
-                </button>
-            </li>
+        <ul class="nav_links">
+               <li> <button routerLink="/home"> Home </button> </li>
+               <li> <button routerLink="/editGame"> EditGame </button> </li> 
+               <li> <button routerLink="/gameList">gameList </button> </li>
+               <li> <button routerLink="/gameDetail"> gameDetail </button> </li> 
         </ul>
     </nav>
 </header>
+<body>
+    <router-outlet></router-outlet>
+</body>
+<footer>
+    
+</footer>

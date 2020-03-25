@@ -9,7 +9,7 @@ import { GameListService } from 'src/app/services/game-list.service';
 })
 export class GameDetailComponent implements OnInit {
 
-  @Input()
+  @Input() //
   gameId:number;
  
   game:GameItem;
@@ -18,6 +18,7 @@ export class GameDetailComponent implements OnInit {
   constructor(private gameListService: GameListService) { }
 
   ngOnInit(): void {
+    //utilizzo metodo creato nel service,dato in ingresso l'id, ci ritorna il gioco da visualizzare. 
     this.game = this.gameListService.getGameItem(this.gameId);
   }
 
