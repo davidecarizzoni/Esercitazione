@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  componentToShow: number = 1;
-  gameIdForDetail: number;
-
-  showDetailPage(id:number){
-    this.gameIdForDetail = id;
-    this.componentToShow = 4; //sappaimo che per visualizzare il dettaglio dobbiamo visualizzare il componennte 4
-  }
-  
+  title:string = 'Game App Angular';
 }

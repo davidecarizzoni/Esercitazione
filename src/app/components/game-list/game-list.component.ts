@@ -7,22 +7,16 @@ import { GameListService } from 'src/app/services/game-list.service';
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.scss']
 })
-export class GameListComponent implements OnInit {
 
-  @Output()
-  showDetailEvent: EventEmitter<number> = new EventEmitter();
+export class GameListComponent implements OnInit {
 
   gameList: GameItem [] = []; 
 
-  constructor(private gameListService: GameListService) {
-    this.gameList = this.gameListService.getGameList();
-  }
+  constructor(private _gameService : GameListService){}
+
 
   ngOnInit(): void {
-  }
-
-  showDetail(id:number){
-    this.showDetailEvent.emit(id);
+    this.gameList = this._gameService.getGameList();
   }
 
 }

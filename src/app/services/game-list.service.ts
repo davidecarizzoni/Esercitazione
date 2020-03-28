@@ -4,6 +4,7 @@ import { GameItem } from 'src/app/model/game-item.interface';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GameListService {
 
   dateMinecraft: Date = new Date('2009-05-17');
@@ -50,6 +51,7 @@ export class GameListService {
   };
 
 
+  //ritorna un gioco
   getGameItem(id: number): GameItem { 
     return this.gameListStored.find(item =>{
       return item.id === id;

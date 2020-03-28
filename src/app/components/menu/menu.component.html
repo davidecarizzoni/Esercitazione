@@ -1,19 +1,21 @@
 <!-- Utilizzo della direttiva router outlet per caricare il componente in base alla visualizzazione corrente -->
-<header>
-    <!-- RouterLink: valorizzato con il path che si desidera raggiungere-->
-    <!-- RouterLinkActive: permette l'associazione di classi css -->
-    <nav>
-        <ul class="nav_links">
-               <li> <button routerLink="/home"> Home </button> </li>
-               <li> <button routerLink="/editGame"> EditGame </button> </li> 
-               <li> <button routerLink="/gameList">gameList </button> </li>
-               <li> <button routerLink="/gameDetail"> gameDetail </button> </li> 
-        </ul>
-    </nav>
-</header>
-<body>
-    <router-outlet></router-outlet>
-</body>
-<footer>
-    
-</footer>
+    <header>
+        <!-- RouterLink: valorizzato con il path che si desidera raggiungere-->
+        <!-- RouterLinkActive: permette l'associazione di classi css -->
+        <div>
+            <nav>
+                <ul class="nav_links">
+                    <li> <button routerLink="/home"> Home </button> </li>
+                    <li> <button routerLink="/edit"> Modifica </button> </li> 
+                    <li> <button routerLink="/list"> Giochi </button> </li>
+                    <!-- <li> <button routerLink="/detail"> Dettaglio </button> </li>  -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <body>
+        <router-outlet></router-outlet>
+    </body>
+    <footer>
+        
+    </footer>
