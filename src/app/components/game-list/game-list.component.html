@@ -1,9 +1,11 @@
 <div class="list-type">
-    <ol>
+    <ul>
         <li *ngFor="let item of gameList">
             {{item.id}}
             {{item.nome}}
-            <button>Vai al dettaglio</button>
+            <button routerLink="/detail:{{item.id}}"> Dettaglio </button> 
+            <!-- Gli passo il path della pagina con l'id del gioco che desidero visualizzare -->
+            <!-- Da gestire sulla pagina dell'id -->
         </li>
-    </ol>
+    </ul>
 </div>

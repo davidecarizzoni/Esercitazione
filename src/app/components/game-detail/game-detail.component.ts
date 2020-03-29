@@ -9,7 +9,7 @@ import { GameListService } from 'src/app/services/game-list.service';
 })
 export class GameDetailComponent implements OnInit {
 
-  @Input() //
+  @Input() 
   gameId:number;
  
   game:GameItem;
