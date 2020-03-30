@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { User } from '../model/user-item.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private controllo:boolean;
 
-  constructor() {}
+  constructor(private router:Router) {
+
+  }
 
   private userList: User[] = [
     {username:'Davide', password:'12345'},
@@ -17,14 +19,31 @@ export class LoginService {
   ];
 
   isPres(username: string, password: string): boolean {
-    this.controllo  = false;
+    let controllo  = false;
     this.userList.forEach(element => {
       if(element.username === username && element.password === password){
-        this.controllo = true;
-        //sessionStorage.setItem('user',username);
-        //sessionStorage.setItem('pw',password);
+        controllo = true;
       } 
     });
-    return this.controllo;
+    return controllo;
+  }
+
+  executeLogin(username: string, password: string){
+    if(this.isPres(username,password)){
+      //se giusto memorizza le informazioni nel session starage
+      sessionStorage.setItem('user', username);
+      
+      this.router.navigateByUrl('/home');
+    }
+  }
+
+
+  executeLoginSession(){
+    let username = sessionStorage.getItem('user');
+    let password = sessionStorage.getItem('password');
+
+    if(this.isPres(username,password)){
+      this.router.navigateByUrl("/home");
+    }
   }
 }

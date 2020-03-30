@@ -7,18 +7,19 @@ import { EditGameComponent } from './components/edit-game/edit-game.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './components/login/login.component';
+import { MyRouteGuardService } from './services/my-route-guard.service';
 
 
 //dichiarazione della routes, della path dei componenti
 //array of Routes object
 const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},
-    {path: 'home' ,component: HomeComponent},
-    {path: 'edit' ,component: EditGameComponent}, //pathDinamico, deve visualizzare il gioco che si desidera modificarre
-    {path: 'list' ,component: GameListComponent}, //visualizza elenco giochi
-    {path: 'detail/:id' ,component: GameDetailComponent}, //path: 'gameDetail':path dinamico, devo passare l'id del gioco da visualizzare
+    {path: 'home' ,component: HomeComponent, canActivate: [MyRouteGuardService] },
+    {path: 'edit' ,component: EditGameComponent, canActivate: [MyRouteGuardService] }, //pathDinamico, deve visualizzare il gioco che si desidera modificarre
+    {path: 'list' ,component: GameListComponent, canActivate: [MyRouteGuardService] }, //visualizza elenco giochi
+    {path: 'detail/:id' ,component: GameDetailComponent, canActivate: [MyRouteGuardService] }, //path: 'gameDetail':path dinamico, devo passare l'id del gioco da visualizzare
     {path:'' ,redirectTo: '/login', pathMatch:'full'},
-    {path:'**', component: PageNotFoundComponent},
+    {path:'**', component: PageNotFoundComponent,},
     //ADD PAGE NOT FOUND COMPONENT
   ]
 

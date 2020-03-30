@@ -15,21 +15,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login(username:string, password:string){
-    if(this.loginService.isPres(username,password)){
-      this.router.navigateByUrl('/home');
-    }
+    this.loginService.executeLogin(username,password);
   }
 
-  loginSession(username:string, password:string){
+  loginSession(username:string, password:string){ 
+    
     sessionStorage.setItem('user', username);
     sessionStorage.setItem('password', password);
- 
-    username=sessionStorage.getItem('user');
-    password=sessionStorage.getItem('password');
- 
-    if(this.loginService.isPres(username,password)){
-      this.router.navigateByUrl("/home");
-    }
+
+    this.loginService.executeLoginSession();
   }
   
 
