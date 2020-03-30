@@ -19,6 +19,18 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/home');
     }
   }
+
+  loginSession(username:string, password:string){
+    sessionStorage.setItem('user', username);
+    sessionStorage.setItem('password', password);
+ 
+    username=sessionStorage.getItem('user');
+    password=sessionStorage.getItem('password');
+ 
+    if(this.loginService.isPres(username,password)){
+      this.router.navigateByUrl("/home");
+    }
+  }
   
 
 }

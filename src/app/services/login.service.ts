@@ -21,6 +21,8 @@ export class LoginService {
     this.userList.forEach(element => {
       if(element.username === username && element.password === password){
         this.controllo = true;
+        //sessionStorage.setItem('user',username);
+        //sessionStorage.setItem('pw',password);
       } 
     });
     return this.controllo;
