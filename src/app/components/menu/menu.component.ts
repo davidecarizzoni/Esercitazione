@@ -21,4 +21,12 @@ export class MenuComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
+  isAdmin(): boolean {
+    //sessionStorage.getItem('privilege') === 'admin' ?  true :  false;
+    if(sessionStorage.getItem('privilege') === 'admin')
+      return true;
+    else 
+      return false;
+  }
+
 }

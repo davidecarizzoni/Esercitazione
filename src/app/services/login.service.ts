@@ -13,9 +13,9 @@ export class LoginService {
   }
 
   private userList: User[] = [
-    {username:'Davide', password:'12345',admin:true},
-    {username:'Luca', password:'1234',admin:false},
-    {username:'Andrea', password:'123',admin:false}
+    { username:'Davide', password:'12345',admin:true },
+    { username:'Luca', password:'1234',admin:false },
+    { username:'Andrea', password:'123',admin:false }
   ];
 
   isPres(username: string, password: string): boolean {

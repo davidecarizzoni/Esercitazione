@@ -7,7 +7,7 @@
                 <ul class="nav_links">
                     <li> <button routerLink="/home"> Home </button> </li>
                     <li> <button routerLink="/list"> Lista Videogiochi </button> </li>
-                    <li> <button routerLink="/edit"> Modifica </button> </li> 
+                    <li *ngIf="isAdmin()"> <button routerLink="/edit"> Modifica </button> </li> 
                     <li> <button (click)="logout()"> Logout </button> </li>
                     <li> Benvenuto {{utente}}  </li>
                     <!-- <li> <button routerLink="/detail"> Dettaglio </button> </li>  -->
