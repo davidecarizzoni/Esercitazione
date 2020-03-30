@@ -15,6 +15,8 @@ export class GameGenereService {
 
   constructor() { }
 
-
+  getGameGenereList():Genere[]{
+    return this.genereList;
+  };
 
 }
