@@ -8,20 +8,18 @@ import { ActivatedRoute} from '@angular/router';
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.scss']
 })
+
 export class GameDetailComponent implements OnInit {
 
   game:GameItem;
 
-  constructor(private gameListService: GameListService, private activatedRoute: ActivatedRoute) {
-    
-  }
+  constructor(private gameListService: GameListService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe( params => {
       console.log(params)
       this.game = this.gameListService.getGameItem(Number(params.get('id'))); //cast a number
     });
-    
   }
 
 

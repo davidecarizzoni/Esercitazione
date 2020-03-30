@@ -9,6 +9,7 @@ import { GameDetailComponent } from './components/game-detail/game-detail.compon
 import { EditGameComponent } from './components/edit-game/edit-game.component';
 import { GameRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MenuComponent,
     GameDetailComponent,
     EditGameComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
