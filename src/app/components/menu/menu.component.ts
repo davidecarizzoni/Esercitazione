@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
+  utente = sessionStorage.getItem('user');
+  
   constructor(private router:Router) { }
 
   ngOnInit(): void {
