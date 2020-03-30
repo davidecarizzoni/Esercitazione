@@ -16,7 +16,7 @@ export class GameListService {
       id: 1, 
       nome:'Minecraft', 
       description:'Minecraft è un videogioco di tipo sandbox originariamente creato e sviluppato dal programmatore svedese Markus Alexej Persson dal 2009 al 2011 e successivamente sviluppato e pubblicato dalla Mojang e dal capo sviluppatore Jens Bergensten dal 2011 a oggi.', 
-      genere:'Storia', 
+      genere:1, 
       rating:'AA', 
       prezzo:50, 
       annoUscita: this.dateMinecraft
@@ -25,7 +25,7 @@ export class GameListService {
       id: 2, 
       nome:'Fortnite', 
       description:'Fortnite è un videogioco del 2017 sviluppato da Epic Games e People Can Fly. Il videogioco presenta tre modalità distinte che condividono lo stesso motore grafico: Salva il mondo, Modalità Creativa e Battaglia reale.', 
-      genere:'Storia', 
+      genere:2, 
       rating:'AA', 
       prezzo:40, 
       annoUscita: this.dateFortnite
@@ -34,7 +34,7 @@ export class GameListService {
       id: 3, 
       nome:'Overwatch', 
       description:'Overwatch è un videogioco sparatutto in prima persona a squadre sviluppato da Blizzard Entertainment e pubblicato da Activision Blizzard uscito il 24 maggio 2016 per PlayStation 4, Nintendo Switch, Xbox One e Microsoft Windows.', 
-      genere:'Guerra', 
+      genere:1, 
       rating:'BB', 
       prezzo:30, 
       annoUscita: this.dateOverwatch
