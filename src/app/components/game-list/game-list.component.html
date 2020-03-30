@@ -3,7 +3,7 @@
         <li *ngFor="let item of gameList">
             {{item.id}}
             {{item.nome}}
-            <button routerLink="/detail:{{item.id}}"> Dettaglio </button> 
+            <button routerLink="/detail/{{item.id}}"> Dettaglio </button> 
             <!-- Gli passo il path della pagina con l'id del gioco che desidero visualizzare -->
             <!-- Da gestire sulla pagina dell'id -->
         </li>

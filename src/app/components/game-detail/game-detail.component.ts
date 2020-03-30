@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GameItem } from 'src/app/model/game-item.interface';
 import { GameListService } from 'src/app/services/game-list.service';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-game-detail',
@@ -9,17 +10,19 @@ import { GameListService } from 'src/app/services/game-list.service';
 })
 export class GameDetailComponent implements OnInit {
 
-  @Input() 
-  gameId:number;
- 
   game:GameItem;
 
-
-  constructor(private gameListService: GameListService) { }
+  constructor(private gameListService: GameListService, private activatedRoute: ActivatedRoute) {
+    
+  }
 
   ngOnInit(): void {
-    //utilizzo metodo creato nel service,dato in ingresso l'id, ci ritorna il gioco da visualizzare. 
-    this.game = this.gameListService.getGameItem(this.gameId);
+    this.activatedRoute.paramMap.subscribe( params => {
+      console.log(params)
+      this.game = this.gameListService.getGameItem(Number(params.get('id'))); //cast a number
+    });
+    
   }
+
 
 }
