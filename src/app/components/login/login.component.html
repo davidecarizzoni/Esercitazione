@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
     <div>
         <label>Username</label>
         <input #username type="text">
@@ -13,4 +13,22 @@
         <button (click)="login(username.value, password.value)">Login</button>
    
     </div>
-</form>
+</form> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form class='login-form'>
+        <div class="flex-row">
+          <label class="lf--label" for="username"></label>
+          <input #username id="username" class='lf--input' placeholder='Username' type='text'>
+        </div>
+        <div class="flex-row">
+          <label class="lf--label" for="password"></label>
+          <input #password id="password" class='lf--input' placeholder='Password' type='password'>
+        </div>
+        <input (click)="login(username.value, password.value)" class='lf--submit' type='submit' value='LOGIN'>
+      </form>
+</body>
+</html>

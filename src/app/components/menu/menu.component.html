@@ -1,8 +1,8 @@
 <!-- Utilizzo della direttiva router outlet per caricare il componente in base alla visualizzazione corrente -->
-    <header>
+    
         <!-- RouterLink: valorizzato con il path che si desidera raggiungere-->
         <!-- RouterLinkActive: permette l'associazione di classi css -->
-        <div>
+        <!-- <div>
             <nav>
                 <ul class="nav_links">
                     <li> <button routerLink="/home"> Home </button> </li>
@@ -10,9 +10,19 @@
                     <li *ngIf="isAdmin()"> <button routerLink="/edit"> Modifica </button> </li> 
                     <li> <button (click)="logout()"> Logout </button> </li>
                     <li> Benvenuto {{utente}}  </li>
-                    <!-- <li> <button routerLink="/detail"> Dettaglio </button> </li>  -->
+                    <li> <button routerLink="/detail"> Dettaglio </button> </li>
                 </ul>
             </nav>
-        </div>
-    </header>
+        </div> -->
+        <body>
+            <div>
+                <a class="btn"> Benvenuto {{utente}}  </a>
+                <a routerLink="/home" class="btn">Home</a>
+                <a routerLink="/list" class="btn">Lista videogiochi</a>
+                <a *ngIf="isAdmin()" button routerLink="/edit" class="btn">Modifica</a>
+                <a (click)="logout()" class="btn">Logout</a>
+
+            </div>
+        </body>
+   
     
