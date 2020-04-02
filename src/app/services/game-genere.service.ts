@@ -8,8 +8,9 @@ export class GameGenereService {
 
   
   private genereList: Genere []= [
-    {id:1, description:'sparatutto'},
-    {id:2, description:'strategia'}
+    {id:0, description:'All'},
+    {id:1, description:'Sparatutto'},
+    {id:2, description:'Strategia'}
   ];
   
 
