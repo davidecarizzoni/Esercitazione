@@ -26,4 +26,9 @@ export class GameListComponent implements OnInit {
     this.genereList = this.gameGenereList.getGameGenereList();
   }
 
+  filtra (genere:number) {
+    console.log(genere);
+    this.gameList = this._gameService.getGameFilterByGenere(Number(genere));
+  }
+
 }

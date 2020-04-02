@@ -58,7 +58,11 @@ export class GameListService {
     });
   }
 
-
+  getGameFilterByGenere(genere:number) : GameItem[] {
+    return this.gameListStored.filter(item =>{
+      return item.genere === genere;
+    });
+  }
 
 
 }

@@ -11,7 +11,12 @@
     </ul>
 </div>
 <div>
-    <select >
-        <option *ngFor="let genere of genereList"> {{genere.description}}</option>
-    </select>
+    <!-- MENU' A TENDINA DEI GENERI DEI FILM -->
+    <div>
+        <h4>FILTRAGGIO PER GENERE</h4>
+        <select #genere>
+            <option *ngFor="let genere of genereList" [value]="genere.id"> {{genere.description}} </option>
+        </select>
+        <button (click)="filtra(genere.value)">Filtra</button>
+    </div>
 </div>
