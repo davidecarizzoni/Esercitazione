@@ -7,7 +7,7 @@ import { Genere } from '../model/genere-interface';
 export class GameGenereService {
 
   
-  private genereList: Genere []= [
+  private genereList: Genere [] = [
     {id:0, description:'All'},
     {id:1, description:'Sparatutto'},
     {id:2, description:'Strategia'}
