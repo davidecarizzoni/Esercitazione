@@ -14,15 +14,24 @@
                 </ul>
             </nav>
         </div> -->
-        <body>
-            <div>
-                <a class="btn"> Benvenuto {{utente}}  </a>
-                <a routerLink="/home" class="btn">Home</a>
-                <a routerLink="/list" class="btn">Lista videogiochi</a>
-                <a *ngIf="isAdmin()" button routerLink="/edit" class="btn">Modifica</a>
-                <a (click)="logout()" class="btn">Logout</a>
+        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a class="btn"> Benvenuto {{utente}}  </a>
+        <a routerLink="/home" class="btn">Home</a>
+        <a routerLink="/list" class="btn">Lista videogiochi</a>
+        <a *ngIf="isAdmin()" button routerLink="/edit" class="btn">Modifica</a>
+        <a (click)="logout()" class="btn">Logout</a>
 
-            </div>
-        </body>
+    </div>
+</body>
+</html>        
    
     
