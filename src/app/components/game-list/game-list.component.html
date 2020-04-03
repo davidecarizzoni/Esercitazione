@@ -1,25 +1,26 @@
 <app-menu></app-menu>
 <body>
-    <div>
+    
         <!-- MENU' A TENDINA DEI GENERI DEI FILM -->
-        <div>
-            <h4>FILTR LISTA</h4>
-            <select #genere>
-                <option *ngFor="let genere of genereList" [value]="genere.id"> {{genere.description}} </option>
-            </select>
-            <button (click)="filtra(genere.value)">Filtra</button>
-        </div>
+<div>
+    <h4>FILTRA LISTA</h4>
+    <div>
+        <select #genere class="classic">
+            <option *ngFor="let genere of genereList" [value]="genere.id"> {{genere.description}} </option>
+        </select> 
+        <button class="button" (click)="filtra(genere.value)">FILTER</button> 
     </div>
-    <div class="list-type">
-        <ul>
+    <div>
+        <ul class="tilesWrap">
             <li *ngFor="let item of gameList">
-                {{item.id}}
-                {{item.nome}}
-                <button routerLink="/detail/{{item.id}}"> Dettaglio </button> 
+                <h2>{{item.id}}</h2>
+                <h3>{{item.nome  | uppercase}}</h3>
+                <p>{{item.description}}</p>
+                <button routerLink="/detail/{{item.id}}"> Vai al dettaglio </button> 
                 <!-- Gli passo il path della pagina con l'id del gioco che desidero visualizzare -->
                 <!-- Da gestire sulla pagina dell'id -->
             </li>
         </ul>
     </div>
-    
+</div>
 </body>
