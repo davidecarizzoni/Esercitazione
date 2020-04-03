@@ -1,11 +1,28 @@
 <!-- Uso il safe navigator, perchè non so se esiste l'oggetto. Se non c'è non vado a chiamare la sua proprietà -->
 <app-menu></app-menu>
-<p> ID: {{game?.id}} </p>
+<!-- <p> ID: {{game?.id}} </p>
 <p> Nome: {{game?.nome}} </p>
 <p> Description: {{game?.description}} </p>
 <p> Genere: {{game?.genere}} </p>
 <p> Rating: {{game?.rating}} </p>
 <p> Prezzo: {{game?.prezzo | currency:"EUR":"symbol"}} </p>
-<p> Anno di uscita: {{game?.annoUscita | date}} </p>
-
+<p> Anno di uscita: {{game?.annoUscita | date}} </p> -->
+<body>
+    <div class="card">
+        <nav>
+        <svg class="arrow" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 " stroke="#727272"/></svg>
+            <a routerLink="/list">Ritorna alla lista giochi</a>
+        </nav>
+        <div class="photo">
+          IMMAGINE
+        </div>
+        <div class="description">
+          <h2>{{game?.nome}}</h2>
+          <h4>Genere: {{game?.genere}}</h4>
+          <h4>Anno di uscita: {{game?.annoUscita | date}} </h4>
+          <h1>{{game?.prezzo | currency:"EUR":"symbol"}}</h1>
+          <p>{{game?.description}}</p>
+          </div>
+      </div>
+</body>
 
