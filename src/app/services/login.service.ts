@@ -49,10 +49,8 @@ export class LoginService {
   }
 
   addUser(user:User){
-    let temp: User;
-    temp.username = user.username;
-    temp.password = user.password;
-    temp.admin = false;
+    user.admin = false;
+    console.log(user);    
     this.userList.push(user);
   }
 }

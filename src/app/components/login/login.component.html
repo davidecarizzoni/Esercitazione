@@ -13,7 +13,7 @@
           <input #password id="password" class='lf--input' placeholder='Password' type='password'>
         </div>
         <input (click)="login(username.value, password.value)" class='lf--submit' type='submit' value='LOGIN'>
-        <!-- <input (click)="signin(username.value, password.value)" class='lf--submit' type='submit' value='REGISTRATI'> -->
+        <input routerLink="/signin"  class='lf--submit' type='submit' value='REGISTRATI'>
 
       </form>
 </body>

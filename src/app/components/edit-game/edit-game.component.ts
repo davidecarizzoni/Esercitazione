@@ -34,17 +34,10 @@ export class EditGameComponent implements OnInit {
   }
 
 
-  form(id : number){
+  showForm(id : number){
     this.game = this.gameListService.getGameItem(id);
     this.modifica(this.game);
     this.attivato = true;
-  }
-
-  idPassato(){
-    if(this.attivato === true) 
-      return true;
-    else
-      return false;
   }
 
   //riempie la form
