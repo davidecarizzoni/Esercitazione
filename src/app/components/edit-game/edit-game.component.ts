@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameItem } from 'src/app/model/game-item.interface';
+import { GameListService } from 'src/app/services/game-list.service';
+import { FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-game',
@@ -7,9 +10,63 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditGameComponent implements OnInit {
 
-  constructor() { }
+  game: GameItem;
+  gameForm: FormGroup;
+  attivato: boolean;
+  gameList: GameItem[];
+  
+  //istanzio il form
+  constructor(private gameListService: GameListService, private fb: FormBuilder) { 
+    this.gameForm = this.fb.group({
+      id: '',
+      nome: '', 
+      description: '',
+      genere: '',
+      rating: '',
+      prezzo: '',
+      annoUscita: '',
+    });
+  }
 
   ngOnInit(): void {
+    this.gameList = this.gameListService.getGameList();
+    this.attivato = false;
+  }
+
+
+  form(id : number){
+    this.game = this.gameListService.getGameItem(id);
+    this.modifica(this.game);
+    this.attivato = true;
+  }
+
+  idPassato(){
+    if(this.attivato === true) 
+      return true;
+    else
+      return false;
+  }
+
+  //riempie la form
+  modifica(game:GameItem){
+    this.gameForm = this.fb.group({
+      id: game.id,
+      nome: game.nome,
+      description: game.description, 
+      genere: game.genere,
+      rating: game.rating, 
+      prezzo: game.prezzo,
+      annoUscita: game.annoUscita
+    });
+  }
+
+  //quando fa il submit invia e aggiorna i valori
+  onSubmit(form){
+    this.gameListService.modifica(form);
+    this.gameList = this.gameListService.getGameList();
+    window.alert('Modifica effettuata');
+
+    this.attivato = false;
   }
 
 }

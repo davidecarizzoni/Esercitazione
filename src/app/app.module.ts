@@ -10,6 +10,8 @@ import { EditGameComponent } from './components/edit-game/edit-game.component';
 import { GameRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './components/signin/signin.component';
 
 
 
@@ -22,11 +24,14 @@ import { LoginComponent } from './components/login/login.component';
     GameDetailComponent,
     EditGameComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
-    GameRoutingModule
+    GameRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

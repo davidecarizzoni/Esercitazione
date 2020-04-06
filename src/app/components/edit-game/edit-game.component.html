@@ -1,1 +1,35 @@
-<p>edit-game works!</p>
+<div>
+    <h1>SCEGLI IL GIOCO DA MODIFICARE</h1>
+
+    <select #id>
+      <option *ngFor="let item of gameList" [value]="item.id" >{{ item.nome }}</option>
+    </select>
+
+    <!-- Una volta selezionato il gioco riempie i form con i dati del gioco selezionato -->
+    <button (click)="form(id.value)">invia</button> 
+
+    <form (ngSubmit)="onSubmit(gameForm.value)" *ngIf="idPassato()" [formGroup]="gameForm">
+        <div >
+          <label for="nome">Name</label>
+          <input type="text"  id="nome"  required formControlName="nome">
+        </div>
+        <div >
+          <label for="description">Descrizione</label>
+          <input type="text"  id="description"  required formControlName="description">
+        </div>
+        <div >
+          <label for="genere">Genere</label>
+          <input type="text"  id="genere"  required formControlName="genere">
+        </div>
+        <div >
+          <label for="rating">Rating</label>
+          <input type="text"  id="rating"  required formControlName="rating">
+        </div>
+        <div >
+          <label for="prezzo">Prezzo</label>
+          <input type="text"  id="prezzo"  required formControlName="prezzo">
+        </div>
+        <button type="submit">Submit</button>
+    </form> 
+
+</div>

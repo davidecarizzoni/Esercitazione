@@ -47,4 +47,12 @@ export class LoginService {
       this.router.navigateByUrl("/home");
     }
   }
+
+  addUser(user:User){
+    let temp: User;
+    temp.username = user.username;
+    temp.password = user.password;
+    temp.admin = false;
+    this.userList.push(user);
+  }
 }

@@ -42,6 +42,7 @@ export class GameListService {
 
   ];
 
+
   constructor() { }
 
   
@@ -54,13 +55,27 @@ export class GameListService {
   //ritorna un gioco
   getGameItem(id: number): GameItem { 
     return this.gameListStored.find(item =>{
-      return item.id === id;
+      return item.id == id;
     });
   }
 
   getGameFilterByGenere(genere:number) : GameItem[] {
     return this.gameListStored.filter(item =>{
       return item.genere === genere;
+    });
+  }
+
+  modifica(game: GameItem){
+    this.gameListStored.forEach(element => {
+      if(element.id === game.id){
+        //funzione per modificare
+        element.nome = game.nome;
+        element.genere = game.genere;
+        element.description = game.description;
+        element.prezzo = game.prezzo;
+        element.rating = game.rating;
+      //aggiorna i singoli valori passato un elemento
+      }
     });
   }
 
