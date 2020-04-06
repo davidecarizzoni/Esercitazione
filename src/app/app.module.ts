@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './components/signin/signin.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 
@@ -25,7 +26,8 @@ import { SigninComponent } from './components/signin/signin.component';
     EditGameComponent,
     PageNotFoundComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

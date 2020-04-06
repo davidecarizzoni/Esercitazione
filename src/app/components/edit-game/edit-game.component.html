@@ -21,10 +21,13 @@
           <label for="genere">Genere</label>
           <input type="text"  id="genere"  required formControlName="genere">
         </div>
-        <div >
+        <!-- STAR CON IL RATING -->
+        <app-rating  id="rating" formControlName="rating"></app-rating>
+        <!-- STAR CON IL RATING -->
+        <!-- <div >
           <label for="rating">Rating</label>
           <input type="text"  id="rating"  required formControlName="rating">
-        </div>
+        </div> -->
         <div >
           <label for="prezzo">Prezzo</label>
           <input type="text"  id="prezzo"  required formControlName="prezzo">
@@ -32,4 +35,7 @@
         <button type="submit">Submit</button>
     </form> 
 
+    <!-- <div>
+      <div>  <button routerLink="/detail/{{item.id}}"> Vai al dettaglio </button> </div>
+    </div> -->
 </div>

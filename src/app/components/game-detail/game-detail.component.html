@@ -15,12 +15,13 @@
         </nav>
         <div class="photo">
           
-          <img src="/assets/img/Fornite.jpg">
+          <img src=".../assets/img/Fornite.jpg">
         </div>
         <div class="description">
           <h2>{{game?.nome}}</h2>
           <h4>Genere: {{game?.genere}}</h4>
           <h4>Anno di uscita: {{game?.annoUscita | date}} </h4>
+          <h4>Rating: {{game?.rating}} </h4>
           <h1>{{game?.prezzo | currency:"EUR":"symbol"}}</h1>
           <p>{{game?.description}}</p>
           </div>

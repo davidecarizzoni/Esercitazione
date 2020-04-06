@@ -25,8 +25,8 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit(user){
-    console.log(user);
-    this.router.navigateByUrl('/login')
+    //console.log(user);
+    this.router.navigateByUrl('/login');
     this.signin.addUser(user);
   }
 }
