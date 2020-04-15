@@ -1,0 +1,35 @@
+{
+    "giochi": [
+        { 
+            "id": 1, 
+            "nome": "Minecraft", 
+            "description" : "Descrizione Minecraft", 
+            "genere" : 1, 
+            "rating" :2, 
+            "prezzo" :50, 
+            "annoUscita" : 2018
+        },
+        { 
+            "id": 2, 
+            "nome": "Fortnite", 
+            "description" : "Descrizione Fortnite", 
+            "genere" : 2, 
+            "rating" :2, 
+            "prezzo" :10, 
+            "annoUscita" : 2020
+        },
+        { 
+            "id": 3, 
+            "nome": "Code", 
+            "description" : "Descrizione Code", 
+            "genere" : 1, 
+            "rating" :2, 
+            "prezzo" :10, 
+            "annoUscita" : 2020
+        }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+}
